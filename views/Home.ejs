@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link rel="stylesheet" href="../style/style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <a href="/">Home</a>
+    <a href="/create-post">Create-post</a>
+    <a href="/admin">Admin</a>
+  </nav>
+  <h1>HOME</h1>
+  <div class="home_div">
+  <% posts.forEach(post => { %>
+    <div class="card">
+
+              <h2 class="home_title"><%= post.title %></h2>
+            <% if (post.image) { %>
+            <img src="<%= post.image %>" alt="Post Image" class="home_image">
+          <% } %>
+        <% if (post.content) { %>
+        <p class="home_content"><%= post.content.substring(0, 100) %>...</p>
+        <% }%>
+        <p class="time">Posted at: <%= post.createdAt %></p>
+        <a href="/posts/<%= post.id %>" class="readmore">Read More</a>
+</div>
+    <% }) %>
+    </div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin</title>
+  <link rel="stylesheet" href="../style/style.css">
+</head>
+<body>
+  <h1>Admin</h1>
+  <div class="navbar">
+
+    <a href="/">Home</a>
+    <a href="/create-post">Create-post</a>
+    <a href="/admin">Admin</a>
+</div>
+
+<div class="body1">
+  <% posts.forEach(post => { %>
+
+      <div class="container">
+        <h2 class="admin_title"><%= post.title %></h2>
+      <% if (post.image) { %>
+      <img src="<%= post.image %>" alt="Post Image" class="admin_image">
+    <% } %>
+  <p class="admin_content"><%= post.content %></p>
+<p class="time">posted at: <%= post.createdAt %></p> 
+<form action="/delete-post/<%= post.id %>" method="POST">
+  <input type="submit" value="Delete" class="delete_butt">
+</form>
+
+<a href="/edit/<%= post.id %>" class="edit_butt">Edit</a>
+
+
+</div>
+<% }) %>
+</div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= post.title %></title>
+    <link rel="stylesheet" href="../style/style.css">
+</head>
+<body>
+   
+    <div class="post_div">
+        <h1><%= post.title %></h1>
+        <% if (post.image) { %>
+            <img src="<%= post.image %>" alt="Post Image" class="post_image">
+        <% } %>
+        <p class="post_content"><%= post.content %></p>
+        <p class="time">Posted at: <%= post.createdAt %></p>
+        <a href="/" class="readmore">Back to Home</a>
+    </div>
+</body>
+</html>

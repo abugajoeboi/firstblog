@@ -1,0 +1,20 @@
+{
+  "name": "myblog",
+  "version": "1.0.0",
+  "description": "myblog",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index",
+    "dev": "nodemon index"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "method-override": "^3.0.0",
+    "multer": "^1.4.5-lts.1"
+  }
+}
